@@ -1,0 +1,15 @@
+.collapse{
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);    
+
+}
+.navbar-brand{
+    font-family: 'Anton', serif;
+    font-size: 20px;
+} 
+.collapse{
+  font-family: 'Anton', serif;
+    font-size: 20px;
+}
+

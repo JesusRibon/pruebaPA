@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+ 
+}
+
+.contenedor{
+  max-width: 900px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.contenedor .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+   
+}
+
+.content form .detalles_usuario{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .detalles_usuario .input_box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input_box span.detalles{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.detalles_usuario .input_box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.detalles_usuario .input_box input:focus,
+.detalles_usuario .input_box input:valid
+{
+    background: linear-gradient(135deg, #c7e8e8, #cca2f2);
+}
+
+
+form .button{
+    height: 50 px;
+    margin: 35px;
+    height: 100%;
+    width: 100%;
+}
+
+form .button input{
+  padding: 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #54bdbd, #b586df);
+}
+
+form .button input:hover{
+  transform: scale(0.99);
+  background: linear-gradient(-135deg, #54bdbd, #b586df);
+}

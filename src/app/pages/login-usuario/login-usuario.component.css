@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #c7e8e8, #cca2f2);
+}
+
+
+.contenedor {
+    width: 350px;
+    height: 430px;
+    background: #ffffff;
+    color: #000000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.detalles_usuario a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 30px;
+  color: darkgrey;
+}
+
+.detalles_usuario p {
+  text-align: right;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.contenedor .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+
+.content form .detalles_usuario{
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.input-field{
+  position: relative;
+}
+
+.input-field input{
+    width: 300px;
+    height: 55px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 0 15px;
+    border: 2px solid #cca2f2;
+    background: transparent;
+    color: #000000;
+    outline: none;
+}
+
+.input-field label{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 19px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+input:focus{
+  border: 2px solid #cca2f2;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+  top: 0;
+  left: 15px;
+  font-size: 16px;
+  padding: 0 2px;
+  background: #ffffff;
+}
+
+form .button{
+    height: 50 px;
+    margin: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #54bdbd, #b586df);
+}
+
+form .button input:hover{
+    transform: scale(0.99);
+    background: linear-gradient(-135deg, #54bdbd, #b586df);
+}
+
+.icon_eye{
+  height: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+
+.icon_eye:hover{
+ color: #b586df;
+}
