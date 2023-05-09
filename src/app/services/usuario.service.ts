@@ -11,9 +11,17 @@ export class UsuarioService {
 
   constructor(private httpClient : HttpClient) { }
 
+  obtenerListaDeUsuarios():Observable<Usuario[]>{
+    return this.httpClient.get<Usuario[]>(`${this.baseUrl} `);
+  }
+
 
   registrarUsuario(usuario:Usuario):Observable<Object>{
     console.info(usuario);
     return this.httpClient.post(`${this.baseUrl} `,usuario);
+  }
+
+  eliminarUsuario(idUsuario:string):Observable<Object>{
+    return this.httpClient.delete(`${this.baseUrl}/${idUsuario}`);
   }
 }

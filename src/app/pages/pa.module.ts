@@ -9,6 +9,12 @@ import { FormsModule } from '@angular/forms';
 import { InicioAdminComponent } from './admin/inicio-admin/inicio-admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarAdminComponent } from './admin/navbar-admin/navbar-admin.component';
+import { ListaUsuariosComponent } from './admin/lista-usuarios/lista-usuarios.component';
+import { FilterPipe } from '../pipes/filter.pipe';
+
+
+
+
 const routes: Routes = [
 
   {
@@ -30,13 +36,17 @@ const routes: Routes = [
   {
     path:'inicio-admin',
     component: InicioAdminComponent
+  },
+  {
+    path:'lista-usuarios',
+    component: ListaUsuariosComponent
   }
 
 ];
 
 
 @NgModule({
-  declarations: [InicioComponent, RegistroUsuarioComponent, LoginUsuarioComponent, ContactoEtechComponent , InicioAdminComponent , NavbarComponent , NavbarAdminComponent],
+  declarations: [InicioComponent, RegistroUsuarioComponent, LoginUsuarioComponent, ContactoEtechComponent , InicioAdminComponent , NavbarComponent , NavbarAdminComponent ,ListaUsuariosComponent , FilterPipe  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
