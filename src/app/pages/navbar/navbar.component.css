@@ -346,3 +346,26 @@ ul li{
 }
 
 
+.cart{
+  display: none;
+}
+
+.show{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  background-color: rgb(212, 205, 205);
+  border-radius: 0.5rem;
+  border: 2px solid #cc1414;
+  right: 60px;
+  top: 40px;
+  min-width: 30%;
+  min-height: 10%;
+ .app-carrito{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+}

@@ -3,11 +3,11 @@ import { Producto } from 'src/app/models/Producto';
 import { ProductoService } from 'src/app/services/Producto.service';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-producto',
+  templateUrl: './producto.component.html',
+  styleUrls: ['./producto.component.css']
 })
-export class InicioComponent  implements OnInit{
+export class ProductoComponent implements OnInit {
   productos: Producto[];
   constructor(private productoServicio : ProductoService ) { }
 
@@ -20,5 +20,11 @@ export class InicioComponent  implements OnInit{
       this.productos = dato;
     });
   }
+  
+
+  addToCart(producto:Producto){
+    return this.productoServicio.addProducto(producto);
+  }
+
 
 }

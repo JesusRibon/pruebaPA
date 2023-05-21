@@ -1,0 +1,53 @@
+<div class="col-md-6 offset-md-3">
+    <h2 class="text-center">Actualizar Producto</h2>
+    <form (ngSubmit)="onSubmit()">
+      <br>
+      <div class="form-group">
+        <label >Nombre:</label>
+        <input type="text" class="form-control"
+         id="nombre" 
+         [(ngModel)]="producto.nombre"
+         name="nombre"
+         placeholder="escriba el nombre del producto">
+      </div>
+      <br>
+      <div class="form-group">
+        <label >Descripcion:</label>
+        <input type="text" class="form-control"
+         id="descripcion" 
+         [(ngModel)]="producto.descripcion"
+         name="descripcion"
+         placeholder="escriba la descripcion del producto">
+      </div>
+      <br>
+      <div class="form-group">
+        <label >Precio:</label>
+        <input type="text" class="form-control"
+         id="precio" 
+         [(ngModel)]="producto.precio"
+         name="precio"
+         placeholder="escriba el precio del producto">
+      </div>
+      <br>
+      <div class="form-group">
+        <label >Disponibilidad:</label>
+        <input type="text" class="form-control"
+         id="disponibilidad" 
+         [(ngModel)]="producto.disponibilidad"
+         name="disponibilidad"
+         placeholder="true o false">
+      </div>
+      <br>
+      <div class="form-group">
+        <label >Cantidad:</label>
+        <input type="number" class="form-control"
+         id="cantidad" 
+         [(ngModel)]="producto.cantidad"
+         name="cantidad"
+         placeholder="cantidad del producto">
+      </div>
+      <br>
+      <button class="btn btn-outline-success">Actualizar</button>
+    </form>
+  </div>
+  

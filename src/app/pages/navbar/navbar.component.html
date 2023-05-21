@@ -21,7 +21,7 @@
 
       <ul class="nav-links">
         <i class="uil uil-times navCloseBtn"></i>
-        <li><a href="#">Productos</a></li>
+        <li><a   routerLink="/productos" routerLinkActive="active">Productos</a></li>
         <li><a href="nosotros.html">Sobre Nosotros</a></li>
         <li><a routerLink="/contacto-etech" routerLinkActive="active">Contactanos</a></li>
       </ul>
@@ -36,10 +36,19 @@
 
       <div class="search-box">
         <i class="uil uil-search search-icon"></i>
-        <input type="text" placeholder="Busca tus productos aquí" />
+        <input type="text" placeholder="Busca tus productos aquí" 
+        />
       </div>
 
-      <i class="uil uil-shopping-cart-alt"></i>
+    <div (click)="onToggleCart()">
+      <i class="uil uil-shopping-cart-alt" ></i>  
+      <div class="cart" [ngClass]="{show:wieCart}">
+       <app-carrito></app-carrito> 
+      </div>
+    </div>
+    
+
+    
 
       <ul class="nav-links2">
         <li>

@@ -1,0 +1,63 @@
+<div>
+  <app-navbar-admin></app-navbar-admin>
+</div>
+
+<div id="main">
+  <div id="class" class="head">
+    <div class="col-div-6">
+      <h2>Lista de Productos</h2>
+      <br>
+
+      <div class="form-gropup">
+        <form>
+          <input
+            type="text"
+            class="form-control"
+            id="code"
+            name="filterProdcuto"
+            placeholder="Buscar Prodcuto"
+           [(ngModel)]="filterProducto"
+          />
+        </form>
+        <br>
+    </div>
+      <div>
+        <button type="button"  routerLink="/registrar-producto" routerLinkActive="active" class="btn btn-success">Registrar producto</button>
+      </div>
+      <br>
+      <table  class="table table-striped table-bordered">
+        <thead class="table-primary">
+          <tr>
+            <th>Id Producto</th>
+            <th>Nombre</th>
+            <th>Derscripcion</th>
+            <th>Precio</th>
+            <th>Disponibilidad</th>
+            <th>Cantidad</th>
+            <th>ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let producto of productos | filterProdcuto : filterProducto">
+            <td>{{ producto.idProducto}}</td>
+            <td>{{ producto.nombre}}</td>
+            <td>{{ producto.descripcion}}</td>
+            <td>{{ producto.precio}}</td>
+            <td>{{ producto.disponibilidad}}</td>
+            <td>{{ producto.cantidad}}</td>
+            <td>
+              <button  (click)="actualizarProducto(producto)" class="btn btn-success" >Actualizar</button>
+              <button class="btn btn-danger" (click)="eliminarProducto(producto.idProducto)" 
+              style="margin-left: 5px"
+              >Eliminar</button>
+
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>
+

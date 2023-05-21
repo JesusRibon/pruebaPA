@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+   
+
+<div class="Imagenes-tienda">
+  <div class="Informacion-producto" *ngFor="let producto of productos">
+    <img src="../../../assets/ImagenPrueba.png" alt="">
+    <h2>{{ producto.nombre }}</h2>
+    <p class="precio">$ {{ producto.precio }}</p>
+    <button (click)="addToCart(producto)">Añadir al carrito</button>
+  </div>
+</div>

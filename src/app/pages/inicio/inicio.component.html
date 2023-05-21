@@ -28,105 +28,27 @@
 <section class="productos">
   <br />
 
-  <div class="tittle"><h1>•. Más vendidos .•</h1></div>
+  <div class="tittle"><h1>•. Productos .•</h1></div>
+  <div *ngFor="let producto of productos">
 
-  <div class="wrapper">
-    <div class="right">
-      <div class="logo">Hols</div>
-      <br />
-      <div class="about">
-        <p>Relleno</p>
+    <div class="wrapper">
+      <div class="right">
+        <div class="logo">{{producto.nombre}}</div>
+        <br />
+        <div class="about">
+          <p> $ {{producto.precio}}</p>
+        </div>
+        <br />
+        <button>
+          <h1>Más información</h1>
+        </button>
       </div>
-      <br />
-      <button>
-        <h1>Más información</h1>
-      </button>
-    </div>
 
-    <div class="left">
-      <ul>
-        <li>JAJA SALU2</li>
-        <li>JAJA SALU2</li>
-        <li>JAJA SALU2</li>
-        <li>JAJA SALU2</li>
-        <li>JAJA SALU2</li>
-        <li>JAJA SALU2</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <div class="right">
-      <div class="logo">Hola</div>
-      <br />
-      <div class="about">
-        <p>Relleno</p>
+      <div class="left">
+        <ul>
+          <li>{{producto.descripcion}}</li>
+        </ul>
       </div>
-      <br />
-      <button>
-        <h1>Más información</h1>
-      </button>
-    </div>
-
-    <div class="left">
-      <ul>
-        <li>Chipset Apple A14 Bionic (5 nm)</li>
-        <li>CPU Hexa-core</li>
-        <li>GPU Apple GPU (4-core graphics)</li>
-        <li>Dual 12 MP, f/2.2, 23mm (wide), 1/3.6"</li>
-        <li>Loudspeaker Yes, with stereo speakers</li>
-        <li>USB Lightning, USB 2.0</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <div class="right">
-      <div class="logo">Hola</div>
-      <br />
-      <div class="about">
-        <p>Relleno</p>
-      </div>
-      <br />
-      <button>
-        <h1>Más información</h1>
-      </button>
-    </div>
-
-    <div class="left">
-      <ul>
-        <li>Chipset Apple A14 Bionic (5 nm)</li>
-        <li>CPU Hexa-core</li>
-        <li>GPU Apple GPU (4-core graphics)</li>
-        <li>Dual 12 MP, f/2.2, 23mm (wide), 1/3.6"</li>
-        <li>Loudspeaker Yes, with stereo speakers</li>
-        <li>USB Lightning, USB 2.0</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <div class="right">
-      <div class="logo">Hola</div>
-      <br />
-      <div class="about">
-        <p>Relleno</p>
-      </div>
-      <br />
-      <button>
-        <h1>Más información</h1>
-      </button>
-    </div>
-
-    <div class="left">
-      <ul>
-        <li>Chipset Apple A14 Bionic (5 nm)</li>
-        <li>CPU Hexa-core</li>
-        <li>GPU Apple GPU (4-core graphics)</li>
-        <li>Dual 12 MP, f/2.2, 23mm (wide), 1/3.6"</li>
-        <li>Loudspeaker Yes, with stereo speakers</li>
-        <li>USB Lightning, USB 2.0</li>
-      </ul>
     </div>
   </div>
 </section>

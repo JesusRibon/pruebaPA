@@ -1,0 +1,31 @@
+<link
+rel="stylesheet"
+href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+/>
+<div class="productCart-wrapper">
+  <h2 class="titel">Carrito de compra</h2>
+  <article class="productCrat" *ngFor="let producto of myCart$ | async">
+    <div class="product-body">
+      <p>{{producto.nombre}}</p>
+      <div class="product-body-info">
+          <p> Precio: $ {{producto.precio }}</p>
+          <p> Cantidad:  {{producto.cantidad}}</p>
+      </div>
+    </div>
+  <div class="productCart-total">
+    <p> $ {{  totalProdcuto (producto.precio , producto.cantidad)}} </p>
+  </div>
+  <div class="productCart-buttons">
+    <div class="productCart-buttons-operatos">
+      <i class="uil uil-minus" (click)="updateUnits('minus' , producto.idProducto)"></i>
+      <span> {{ producto.cantidad }} </span>
+      <i class="uil uil-plus" (click)="updateUnits('add' , producto.idProducto)"></i>
+    </div>
+    <i class="uil uil-trash-alt" (click)="deleteProducto(producto.idProducto)"></i>
+  </div>
+</article>
+<div class="cartTotal">
+  <p class="cartTotal-total">Total: $ {{ totalCart()}}</p>
+</div>
+<button class="cart-btn">Comprar</button>
+</div>
