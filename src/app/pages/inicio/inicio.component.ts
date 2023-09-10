@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from 'src/app/models/Producto';
-import { ProductoService } from 'src/app/services/Producto.service';
+import { Producto } from 'src/shared/models/Producto';
+import { ProductoService } from 'src/shared/services/Producto.service';
 
 @Component({
   selector: 'app-inicio',
