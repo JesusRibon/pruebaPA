@@ -9,15 +9,17 @@ import { ProductoService } from 'src/shared/services/Producto.service';
 })
 export class ProductoComponent implements OnInit {
   productos: Producto[];
+  isProdcut = false;
   constructor(private productoServicio : ProductoService ) { }
 
   ngOnInit() {
-    this.obtenerProductos();
+      this.obtenerProductos();
   }
 
   private obtenerProductos(){
     this.productoServicio.obtenerListaDeProductos().subscribe(dato => {
       this.productos = dato;
+      this.isProdcut =  this.productos?.length > 0;;
     });
   }
   

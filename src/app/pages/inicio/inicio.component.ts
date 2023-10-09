@@ -9,6 +9,7 @@ import { ProductoService } from 'src/shared/services/Producto.service';
 })
 export class InicioComponent  implements OnInit{
   productos: Producto[];
+  isProdcut = false;
   constructor(private productoServicio : ProductoService ) { }
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class InicioComponent  implements OnInit{
   private obtenerProductos(){
     this.productoServicio.obtenerListaDeProductos().subscribe(dato => {
       this.productos = dato;
+      this.isProdcut =  this.productos?.length > 0;;
     });
   }
 

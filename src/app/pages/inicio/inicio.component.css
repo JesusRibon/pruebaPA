@@ -338,3 +338,35 @@ ul li{
 }
 
 
+.main{
+  padding: 4% 15%;
+  .container{
+      display: flex;
+      width: 1179px;
+      height: 634px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      border-radius: 16px;
+      background: var(--n-40013, rgba(153, 169, 173, 0.13));
+  }
+}
+
+.circulo{
+  display: flex;
+  width: 180px;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  border: 10px solid var(--material-theme-ref-error-error-60, #b586df);
+ .img{
+  width: 115px;
+  height: 115px;
+ }
+}
+
+.mensaje{
+  font-size: 20px;
+}
