@@ -1,0 +1,42 @@
+<body>
+  <button class="chatbot-toggler" (click)="toggleChatbot()">
+    <span><i class="uil uil-comment-alt-dots"></i></span>
+    <span><i class="uil uil-times"></i></span>
+  </button>
+
+  <div class="chatbot" *ngIf="isChatbotVisible">
+    <div class="header">
+      <p class="e">E-Tech</p>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span><i class="uil uil-robot" id="content" name="content"></i></span>
+          <textarea
+            id="content"
+            name="content"
+            [(ngModel)]="content"
+            class="textarea"
+            placeholder="¡Hola! 👋¿En qué puedo ayudarte hoy?"
+          ></textarea>
+        </li>
+      </ul>
+
+      <div class="chat-input">
+        <textarea
+          placeholder="Digita un mensaje"
+          id="prompt"
+          name="prompt"
+          spellcheck="false"
+          required
+          [(ngModel)]="prompt"
+        ></textarea>
+        <div class="button">
+          <button type="submit">
+            <mat-icon class="submit">send</mat-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

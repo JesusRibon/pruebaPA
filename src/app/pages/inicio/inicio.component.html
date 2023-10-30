@@ -39,7 +39,7 @@
             <p> $ {{producto.precio}}</p>
           </div>
           <br />
-          <button>
+          <button (click)="redirectConsult(producto.idProducto)">
             <h1>Más información</h1>
           </button>
         </div>
@@ -63,3 +63,7 @@
     </div>
   </div>
 </section>
+
+
+<app-chatbot></app-chatbot>
+

@@ -17,6 +17,9 @@ import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { ProductoComponent } from './producto/producto.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { NavbarComponent } from 'src/shared/component/navbar/navbar.component';
+import { MaterialModule } from 'src/shared/material/material.module';
+import { ConsultarProductoComponent } from './consultar-producto/consultar-producto.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   {
@@ -59,6 +62,10 @@ const routes: Routes = [
     path: 'actualizar-producto',
     component: ActualizarProductoComponent,
   },
+  {
+    path: ':idProducto/consultar',
+    component: ConsultarProductoComponent
+  }
 ];
 
 @NgModule({
@@ -78,7 +85,9 @@ const routes: Routes = [
     CarritoComponent,
     FilterProdcutoPipe,
     ActualizarProductoComponent,
+    ConsultarProductoComponent,
+    ChatbotComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule , MaterialModule],
 })
 export class PaModule {}
