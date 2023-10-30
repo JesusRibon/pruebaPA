@@ -11,6 +11,7 @@ import { UsuarioService } from 'src/shared/services/usuario.service';
 import { SpinnerModule } from 'src/shared/component/spinner/spinner/spinner.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerInterceptor } from 'src/shared/interceptors/spinner.interceptor';
+import { MaterialModule } from 'src/shared/material/material.module';
 
 
 
@@ -32,7 +33,8 @@ import { SpinnerInterceptor } from 'src/shared/interceptors/spinner.interceptor'
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    SpinnerModule
+    SpinnerModule,
+
     
 
   ],

@@ -1,0 +1,94 @@
+<div class="nav">
+    <app-navbar></app-navbar>
+  </div>
+
+  <main >
+    <div class="container-img">
+        <img src="https://i.blogs.es/6e672b/macbook-air-m2-0/1366_2000.jpeg" 
+                   alt="imagen-producto" class="img-product">
+    </div>
+    <div class="container-info-product">
+        <h1 class="title">{{dataProduct?.nombre}}</h1>
+        <div class="container-price">
+            <div class="container-details-products">
+                <div class="btn-seleccionar">     
+                    <label for="color" id="color " name="color"><b>Color</b></label>
+                    <select name="color" id="color" class="configuraciones">
+                        <option disabled selected value ="">
+                            selecione un color
+                        </option>
+                        <option value="rojo">
+                            rojo
+                        </option>
+                        <option value="beich">
+                            Amarillo
+                        </option>
+                        <option value="blanco">
+                            blanco
+                        </option>
+                        <option value="azul">
+                            rojo
+                        </option>
+                    </select>
+                </div>
+                <div class="btn-seleccionar">
+                  <label for="color" id="color " name="color"><b>Cantidad</b></label>
+                    <select name="color" id="color" class="configuraciones">
+                      <option disabled selected value ="">
+                        selecione una cantidad
+                        </option>
+                        <option value="1">
+                           1
+                        </option>
+                        <option value="2">
+                          2
+                        </option>
+                        <option value="3">
+                          3
+                        </option>
+                        <option value="4">
+                          4
+                        </option>
+                        <option value="5">
+                          5
+                        </option>
+
+                    </select>  
+                </div>
+                <div class="button" (click)="addToCart(dataProduct)">
+                    <input type="submit" value="Añadir al Carrito" />
+                  </div>
+            </div> 
+            
+        </div>
+        <div class="container-description">
+            <div class="title-description">
+               <h3>Descripcion</h3>   
+            </div>
+            <div class="text-description">
+                <p>{{dataProduct?.descripcion}}
+                </p>
+            </div>
+        </div>     
+    </div>
+</main>
+<div class="title-relacionado">
+    <div class="title-pro">
+        PRODUCTOS RELACIONADOS
+    </div>
+</div>
+<div class="content-relacionada">
+    <div class="productos-relacionados" *ngFor="let product of listProduct ">
+        <div class="card-prodcuto">
+            <div class="img">
+                <img src="https://compulago.b-cdn.net/wp-content/uploads/erp/productos/64360242928/1599575506554.jpg" alt="" class="producto-img">
+            </div>
+            <div class="descripcion">
+                <div class="title"><p>{{product.nombre}}</p></div>
+            </div>
+            <div class="precio">
+                <div class="price">$ {{product.precio}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,4 +5,5 @@ export class Producto {
     precio: number;
     disponibilidad: boolean;
     cantidad : number;
+    urlImg: string;
 }

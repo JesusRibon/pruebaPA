@@ -29,7 +29,6 @@ export class ListaProductosComponent implements OnInit {
   eliminarProducto(idProducto:string){
     if(confirm(" ¿Estas seguro de eliminar al Usuuario  ?")){
       this.productoServicio.eliminarProducto(idProducto).subscribe(dato =>{
-        console.log(dato);
         this.obtenerProductos();
       })
     }

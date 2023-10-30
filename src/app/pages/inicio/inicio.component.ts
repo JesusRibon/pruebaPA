@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/shared/models/Producto';
 import { ProductoService } from 'src/shared/services/Producto.service';
 
@@ -10,7 +11,9 @@ import { ProductoService } from 'src/shared/services/Producto.service';
 export class InicioComponent  implements OnInit{
   productos: Producto[];
   isProdcut = false;
-  constructor(private productoServicio : ProductoService ) { }
+  constructor(private productoServicio : ProductoService ,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,) { }
 
   ngOnInit() {
     this.obtenerProductos();
@@ -20,6 +23,12 @@ export class InicioComponent  implements OnInit{
     this.productoServicio.obtenerListaDeProductos().subscribe(dato => {
       this.productos = dato;
       this.isProdcut =  this.productos?.length > 0;;
+    });
+  }
+
+  redirectConsult(idProducto:String){
+    this.router.navigate([idProducto, 'consultar'], {
+      relativeTo: this.activatedRoute,
     });
   }
 
