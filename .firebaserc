@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-tech-ee03f": {
+      "hosting": {
+        "pruebaPA": [
+          "e-tech-ee03f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-tech-ee03f"
+  }
+}

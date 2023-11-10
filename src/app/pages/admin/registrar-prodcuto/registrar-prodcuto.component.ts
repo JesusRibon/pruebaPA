@@ -10,18 +10,26 @@ import { ProductoService } from 'src/shared/services/Producto.service';
 })
 export class RegistrarProdcutoComponent implements OnInit {
   producto: Producto = new Producto();
-
+  private image:any;
   constructor(private productoServicio : ProductoService , private router:Router) { }
 
   ngOnInit() {
   }
 
-  registrarProducto(){
-    this.productoServicio.registraProducto(this.producto).subscribe(dato =>{
-      console.log(dato);
-      this.irAlaListaProductos();
-    }, error => console.log(error))
+  handleImage(event:any):void{
+    this.image = event.target.files[0];
   }
+ 
+  registrarProducto(){
+    this.productoServicio.registraProducto(this.producto , this.image).subscribe(dato =>{
+      this.irAlaListaProductos();
+    }, error => console.log('este es error',error))
+  }
+
+  exit(){
+    this.router.navigate(['/lista-productos'])
+  }
+  
 
   irAlaListaProductos(){
     this.router.navigate(['/lista-productos']);
@@ -31,4 +39,6 @@ export class RegistrarProdcutoComponent implements OnInit {
   onSubmit(){
     this.registrarProducto();
   }
+
+ 
 }

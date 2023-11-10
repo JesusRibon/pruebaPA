@@ -1,7 +1,15 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #1b203d;
+    background-color:white ;
     overflow: hidden;
     font-size: system-ui;
 }
@@ -20,32 +28,38 @@ body{
 }
 
 .logo span{
-    color: #f7403b;
+    color: blueviolet;
+    font-weight: bold;
 }
 .sidenav{
     height: 100%;
-    width: 300px;
+    width: 299px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #272c4a;
+    background-color:#272c4a;
     overflow: hidden;
     transition: 0.5s;
-    padding-top: 30px;
-
-
+    padding-top: 20px;
 }
 
 .sidenav a{
     padding: 15px 8px 15px 32px;
     color: #818181;
     display: block;
-    transition: 0.4s;
+    transition: 0.5s;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    margin: 10px 10px 10px 10px;
+
 }
 .sidenav a:hover{
-    color: #f1f1f1;
-    background-color: #1b203d;
+    color:black;
+    background-color:white;
+    border-radius: 10px;
+    opacity:.5;
 
 }
 
@@ -53,39 +67,23 @@ body{
     transition: margin-left .5s;
     padding: 16px;
     margin-left :300px ;
+    background-color: transparent;
+    border: 1px solid blueviolet;
+    border-radius:20px;
 }
 .head{
     padding: 20px;
 }
 .col-div-6{
-    width: 50%;
-    float: left;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
-.profile{
-    display: inline-block;
-    float: right;
-    width: 160px;
-}
-.pro-img{
-    float: left;
-    width: 40px;
-    margin-top: 5px;
-
-}
-.profile p{
-    color:  white;
-    font-weight: 500;
-    margin-left: 55px;
-    margin-top: 10px ;
-    font-size: 13.5px;
-}
-
-.profile p span{
-    font-weight: 400;
-    font-size: 12px;
-    display: block;
-    color: #8e8b8e;
+img{
+    width: 60px;
+    height: auto;
 }
 
 .nav{

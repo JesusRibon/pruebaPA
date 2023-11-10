@@ -57,6 +57,9 @@ main{
     background-color: white;
     flex:1;
     margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    height: 500px;
     .img-product{
         max-width: 100%;
     }

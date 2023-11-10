@@ -13,6 +13,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerInterceptor } from 'src/shared/interceptors/spinner.interceptor';
 import { MaterialModule } from 'src/shared/material/material.module';
 
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from 'src/environments/environment';
+
+
 
 
 
@@ -34,13 +40,19 @@ import { MaterialModule } from 'src/shared/material/material.module';
     HttpClientModule,
     BrowserAnimationsModule,
     SpinnerModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFirestoreModule,
+    AngularFireStorageModule,
+
+
 
     
 
   ],
   providers: [
     UsuarioService,
-    {provide: HTTP_INTERCEPTORS , useClass: SpinnerInterceptor , multi: true}
+    {provide: HTTP_INTERCEPTORS , useClass: SpinnerInterceptor , multi: true},
+    {provide: BUCKET, useValue: 'gs://e-tech-ee03f.appspot.com' }
   ],
   bootstrap: [AppComponent]
 })

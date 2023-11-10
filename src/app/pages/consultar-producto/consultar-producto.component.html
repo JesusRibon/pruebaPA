@@ -4,7 +4,7 @@
 
   <main >
     <div class="container-img">
-        <img src="https://i.blogs.es/6e672b/macbook-air-m2-0/1366_2000.jpeg" 
+        <img [src]="dataProduct.urlImg" 
                    alt="imagen-producto" class="img-product">
     </div>
     <div class="container-info-product">
@@ -81,7 +81,7 @@
     <div class="productos-relacionados" *ngFor="let product of listProduct ">
         <div class="card-prodcuto">
             <div class="img">
-                <img src="https://compulago.b-cdn.net/wp-content/uploads/erp/productos/64360242928/1599575506554.jpg" alt="" class="producto-img">
+                <img [src]="product.urlImg" alt="" class="producto-img">
             </div>
             <div class="descripcion">
                 <div class="title"><p>{{product.nombre}}</p></div>
