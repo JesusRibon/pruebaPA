@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/Producto';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, finalize } from 'rxjs';
+import { FileI } from '../models/file.interface';
+import { AngularFireStorage, AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -12,17 +14,60 @@ export class ProductoService {
   private myList:Producto[]=[];
   private myCart = new BehaviorSubject<Producto[]>([]);
   myCart$ =  this.myCart.asObservable();
-
-constructor(private httpClient : HttpClient) { }
+  private filePath: string;
+  private downloadUIrl: Observable<string>;
+  private urlImg:any;
+constructor(private httpClient : HttpClient ,  private storage: AngularFireStorage) { }
 
 
 obtenerListaDeProductos():Observable<Producto[]>{
   return this.httpClient.get<Producto[]>(`${this.baseURL} `);
 }
 
-registraProducto(producto:Producto):Observable<Object>{
-  return this.httpClient.post(`${this.baseURL} `,producto);
+// private uploadImage(producto:Producto , image:FileI){
+//   this.filePath = `images/${image.name}`;
+//   const fileRef = this.storage.ref(this.filePath);
+//   const task = this.storage.upload(this.filePath , image);
+//   task.snapshotChanges()
+//   .pipe(
+//     finalize(() =>{
+//       fileRef.getDownloadURL().subscribe( urlImage => {
+//         this.downloadUIrl = urlImage;
+//         this.urlImg = urlImage;
+//         console.log('URL', urlImage)
+//       })
+//     })
+//   ).subscribe();
+// }
+
+
+registraProducto(producto: Producto, image: FileI): Observable<Object> {
+  this.filePath = `images/${image.name}`;
+  const fileRef = this.storage.ref(this.filePath);
+  const task = this.storage.upload(this.filePath, image);
+
+  return new Observable(observer => {
+    task.snapshotChanges()
+      .pipe(
+        finalize(() => {
+          fileRef.getDownloadURL().subscribe(urlImage => {
+            this.downloadUIrl = urlImage;
+            this.urlImg = urlImage;
+            producto.urlImg = this.urlImg; // Establece la URL en el objeto producto dentro de la suscripción.
+            this.httpClient.post(`${this.baseURL}`, producto)
+              .subscribe(response => {
+                observer.next(response);
+                observer.complete();
+              }, error => {
+                observer.error(error);
+              });
+          })
+        })
+      )
+      .subscribe();
+  });
 }
+
 
 obtenerProdcuto(idProducto:string):Observable<Producto>{
   return this.httpClient.get<Producto>(`${this.baseURL}/${idProducto}`);
@@ -35,6 +80,16 @@ eliminarProducto(idProducto:string):Observable<Object>{
 actualizarProducto(producto:Producto):Observable<Object>{
   return this.httpClient.put(`${this.baseURL}/${producto.idProducto}`,producto);
 }
+
+// public preAddProduct(prodcuto:Producto , image:FileI): void{
+//   this.uploadImage(prodcuto , image);
+// }
+
+
+private saveProducto(producto:Producto){
+
+}
+
 
 
 

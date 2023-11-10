@@ -1,9 +1,29 @@
+.content {
+    overflow: auto;
+    max-height: 300px; 
+  }
+  
+
+  .content::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 8px;
+    background: var(--B500, #33474C);
+  }
+  
+  .content::-webkit-scrollbar-thumb {
+    width: 8px;
+    border-radius: 8px;
+    background-color: #030301;
+    margin: 0 4px;
+  }
+
 .productCart-wrapper{
     display: flex;
     flex-direction: column; 
     justify-content: center;
     padding: 1rem;
-   
+
+    
     
     .productCrat{
         display: flex;
@@ -13,6 +33,9 @@
         color: rgb(0, 0, 0);
         
     }
+
+
+    
     .productCrat-body{
         flex-basis: 50%;
 
@@ -71,3 +94,6 @@
     text-align: center;
 }
 }
+
+
+

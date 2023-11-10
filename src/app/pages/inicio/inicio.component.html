@@ -19,51 +19,38 @@
       </li>
     </ul>
   </div>
-
-  <!-- Fin Slider -->
-
-  <!-- Productos Más Vendidos -->
 </section>
 
 <section class="productos">
-  <br />
-
   <div class="tittle"><h1>•. Productos .•</h1></div>
   <div *ngIf="isProdcut">
     <div *ngFor="let producto of productos">
       <div class="wrapper">
         <div class="right">
           <div class="logo">{{producto.nombre}}</div>
-          <br />
           <div class="about">
-            <p> $ {{producto.precio}}</p>
+            <p>$ {{producto.precio}}</p>
           </div>
-          <br />
           <button (click)="redirectConsult(producto.idProducto)">
             <h1>Más información</h1>
           </button>
         </div>
-  
         <div class="left">
-          <ul>
-            <li>{{producto.descripcion}}</li>
-          </ul>
+          <div class="img-producto">
+            <img [src]="producto.urlImg" alt="" class="img">
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
   <div class="main" *ngIf="!isProdcut">
     <div class="container">
       <div class="circulo">
         <img src="../../../assets/img/product.png" class="img" alt="">
       </div>
-        <p class="mensaje">No hay Productos Registrados!!!</p>
+      <p class="mensaje">No hay Productos Registrados!!!</p>
     </div>
   </div>
 </section>
 
-
 <app-chatbot></app-chatbot>
-

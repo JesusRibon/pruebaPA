@@ -4,9 +4,15 @@ href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
 />
 <div class="productCart-wrapper">
   <h2 class="titel">Carrito de compra</h2>
-  <article class="productCrat" *ngFor="let producto of myCart$ | async">
+  <div class="content">
+        <article class="productCrat" *ngFor="let producto of myCart$ | async">
     <div class="product-body">
       <p>{{producto.nombre}}</p>
+      <div class="content-img">
+        <div class="img-producto">
+          <img [src]="producto.urlImg" width="100px">
+        </div>
+      </div>
       <div class="product-body-info">
           <p> Precio: $ {{producto.precio }}</p>
           <p> Cantidad:  {{producto.cantidad}}</p>
@@ -27,5 +33,7 @@ href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
 <div class="cartTotal">
   <p class="cartTotal-total">Total: $ {{ totalCart()}}</p>
 </div>
+
 <button class="cart-btn">Comprar</button>
+</div>
 </div>
