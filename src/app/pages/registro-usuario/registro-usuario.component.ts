@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/shared/models/usuario';
 import { UsuarioService } from 'src/shared/services/usuario.service';
 import Swal from 'sweetalert2';
@@ -13,40 +14,57 @@ import Swal from 'sweetalert2';
 })
 export class RegistroUsuarioComponent implements OnInit{
   usuario: Usuario = new Usuario();
-  
-  constructor(private usuarioService: UsuarioService){}
+  form!: FormGroup;
 
-  ngOnInit(): void {
-  
-  }
+  constructor(private usuarioService: UsuarioService, 
+    private fb: FormBuilder) {}
 
-  guardarUsuario(){
-    this.usuarioService.registrarUsuario(this.usuario).subscribe(dato => {
-      console.log(dato);
-    },error => console.log(error));
+
+    ngOnInit(): void {
+      this.form = this.fb.group({
+        idUsuario: ['', Validators.required],
+        nombre: ['', Validators.required],
+        apellido: ['', Validators.required],
+        direccion: ['', Validators.required],
+        telefono: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+      });
+    }
+    
+    guardarUsuario() {
+      this.usuarioService.registrarUsuario(this.form.value).subscribe(
+        dato => {
+          console.log(dato);
+          Swal.fire({
+            icon: 'success',
+            title: 'Registro exitoso',
+            text: 'Usuarios Registrado exitosamente',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          this.limpiatrCampos();
+        },
+        error => {
+          console.error(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Ocurrió un error al registrar el usuario. Por favor, inténtalo de nuevo.',
+          });
+        }
+      );
     }
 
     limpiatrCampos(){
-      this.usuario.idUsuario = '';
-      this.usuario.nombre = '';
-      this.usuario.apellido = '';
-      this.usuario.direccion = '';
-      this.usuario.telefono = '';
-      this.usuario.email = '';
-      this.usuario.password = '';
+      this.form.reset();
     }
 
 
-    onSubmit(){
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1500
-      })
-      this.guardarUsuario();
-      this.limpiatrCampos();
+    onSubmit() {
+      if (this.form.valid) {
+        this.guardarUsuario();
+      }
     }
   }
 

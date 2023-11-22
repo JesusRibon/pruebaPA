@@ -6,26 +6,32 @@
 
         <div class="content">
 
-            <form action="#">
+            <form [formGroup]="form">
 
                 <div class="detalles_usuario">
 
                     <div class="input-field">
-                        <input type="text" required spellcheck="false"> 
+                        <input type="text" required formControlName="email"> 
                         <label>Email</label>
                     </div>
-
+                    <mat-error *ngIf="form.get('email')?.touched && (form.get('email')?.hasError('email') || form.get('email')?.hasError('required'))">
+                        {{ form.get('email')?.hasError('email') ? 'Correo electrónico inválido' : 'Campo obligatorio' }}
+                      </mat-error>
                     <br>
 
                     <div class="input-field">
-                        <input type="password" required spellcheck="false"> 
+                        <input type="password" required spellcheck="false" formControlName="password"> 
                         <label>Contraseña</label>
                     </div>
+
+                    <div *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+                        <mat-error class="mensage-error">Campo obligatorio</mat-error>
+                      </div>
 
                     <a href="">¿Olvidaste tu contraseña?</a>
     
                     <div class="button" onclick="location.href='index.html'">
-                        <input type="submit" value="Iniciar Sesión">
+                        <input type="submit" value="Iniciar Sesión" routerLink="" [disabled]="form.invalid">
                     </div>
 
                     <br><p>No tienes una cuenta. <a routerLink="/registro-usuario" routerLinkActive="active">Crea una Cuenta</a></p>
