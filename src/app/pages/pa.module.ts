@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { FilterPipe } from 'src/shared/pipes/filter.pipe';
 import { FilterProdcutoPipe } from 'src/shared/pipes/filterProdcuto.pipe';
@@ -20,7 +20,7 @@ import { NavbarComponent } from 'src/shared/component/navbar/navbar.component';
 import { MaterialModule } from 'src/shared/material/material.module';
 import { ConsultarProductoComponent } from './consultar-producto/consultar-producto.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
-
+import { NgxPayPalModule } from 'ngx-paypal';
 const routes: Routes = [
   {
     path: '',
@@ -88,6 +88,8 @@ const routes: Routes = [
     ConsultarProductoComponent,
     ChatbotComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule , MaterialModule],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule , MaterialModule , 
+    ReactiveFormsModule,
+    NgxPayPalModule],
 })
 export class PaModule {}

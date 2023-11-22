@@ -4,20 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsuarioService } from 'src/shared/services/usuario.service';
 import { SpinnerModule } from 'src/shared/component/spinner/spinner/spinner.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerInterceptor } from 'src/shared/interceptors/spinner.interceptor';
-import { MaterialModule } from 'src/shared/material/material.module';
 
 // import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from 'src/environments/environment';
-
 
 
 
@@ -43,7 +41,6 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     // AngularFirestoreModule,
     AngularFireStorageModule,
-
 
 
     

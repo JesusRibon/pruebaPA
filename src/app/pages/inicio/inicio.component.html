@@ -6,16 +6,16 @@
   <div class="slider">
     <ul>
       <li>
-        <img src="../../../assets/slider2.jpg" />
+        <img src="../../../assets/Zona Gamer.jpg"  />
       </li>
       <li>
-        <img src="../../../assets/slides3.jpg" />
+        <img src="../../../assets/img/carruxel-2.png" />
       </li>
       <li>
         <img src="../../../assets/slides4.jpg" />
       </li>
       <li>
-        <img src="../../../assets/Zona Gamer.jpg" />
+        <img src="../../../assets/img/carruxel-1.png"/>
       </li>
     </ul>
   </div>
@@ -25,19 +25,21 @@
   <div class="tittle"><h1>•. Productos .•</h1></div>
   <div *ngIf="isProdcut">
     <div *ngFor="let producto of productos">
-      <div class="wrapper">
-        <div class="right">
-          <div class="logo">{{producto.nombre}}</div>
-          <div class="about">
-            <p>$ {{producto.precio}}</p>
+      <div class="card-container">
+        <div class="wrapper">
+          <div class="right">
+            <div class="logo">{{producto.nombre}}</div>
+            <div class="about">
+              <p>${{producto.precio}}</p>
+            </div>
+            <button (click)="redirectConsult(producto.idProducto)">
+              <h1>Más información</h1>
+            </button>
           </div>
-          <button (click)="redirectConsult(producto.idProducto)">
-            <h1>Más información</h1>
-          </button>
-        </div>
-        <div class="left">
-          <div class="img-producto">
-            <img [src]="producto.urlImg" alt="" class="img">
+          <div class="left">
+            <div class="img-producto">
+              <img [src]="producto.urlImg" alt="" class="img">
+            </div>
           </div>
         </div>
       </div>

@@ -152,7 +152,7 @@ a {
     max-width: 400px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 789px) {
   .nav .navOpenBtn,
   .nav .navCloseBtn {
     display: block;
@@ -259,4 +259,17 @@ ul li{
   flex-direction: column;
   justify-content: center;
  }
+}
+
+
+.ca{
+  cursor: pointer;
+}
+
+
+@media (max-width: 1139px) {
+  .menu-vertical {
+    margin-left: -150px;
+    margin-top:20px;
+  }
 }

@@ -78,17 +78,30 @@
     </div>
 </div>
 <div class="content-relacionada">
-    <div class="productos-relacionados" *ngFor="let product of listProduct ">
-        <div class="card-prodcuto">
-            <div class="img">
-                <img [src]="product.urlImg" alt="" class="producto-img">
-            </div>
-            <div class="descripcion">
-                <div class="title"><p>{{product.nombre}}</p></div>
-            </div>
-            <div class="precio">
-                <div class="price">$ {{product.precio}}</div>
-            </div>
-        </div>
+    <div class="content-button-left">
+        <mat-icon  (click)="prevProducts()" class="icon-left">arrow_back_ios</mat-icon>
     </div>
-</div>
+    <div class="productos-relacionados">
+      <div *ngFor="let product of visibleProducts; let i = index">
+        <div *ngIf="i !== currentIndex" class="card-prodcuto">
+          <div class="img">
+            <img [src]="product.urlImg" alt="" class="producto-img">
+          </div>
+          <div class="descripcion">
+            <div class="title">
+              <p>{{ product.nombre }}</p>
+            </div>
+          </div>
+          <div class="precio">
+            <div class="price">$ {{ product.precio }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="content-button-rigth">
+        <mat-icon class="icon-right" (click)="nextProducts()">arrow_forward_ios</mat-icon>
+    </div>
+  </div>
+  
+  

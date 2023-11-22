@@ -80,10 +80,17 @@ form .input_box span.detalles{
 }
 
 .button{
-    height: 50 px;
+    height: 50px;
     margin: 35px;
     height: 100%;
     width: 100%;
+}
+
+.invalid{
+  height: 50px;
+  margin: 35px;
+  height: 100%;
+  width: 100%;
 }
 .button input{
    padding: 10px;
@@ -103,4 +110,21 @@ form .input_box span.detalles{
  .button input:hover{
   transform: scale(0.99);
   background: linear-gradient(-135deg, #54bdbd, #b586df);
+}
+
+
+.invalid input{
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #C4C4C4;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #F5F5F5; 
+  cursor: pointer; 
 }

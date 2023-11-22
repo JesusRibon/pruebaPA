@@ -292,6 +292,30 @@ font-weight: 700;
 .content-relacionada{
     display: flex;
     flex-wrap: wrap;
+
+    .content-button-left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+        .icon-left{
+           cursor: pointer;
+        }
+    }
+
+
+    .content-button-rigth{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+
+        .icon-right{
+            cursor: pointer;
+        }
+    }
+
+
 }
 
 .productos-relacionados{
